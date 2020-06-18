@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from libs.helper import fetch_data, getDate
 
 
-api = Flask(__name__)
+app = Flask(__name__)
 
 
 # yesToday = getDate()
@@ -11,8 +11,8 @@ api = Flask(__name__)
 url = "https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_daily_reports/"
 
 
-@api.route('/api/v1', methods=["GET"])
-@api.route('/api/v1/<date>', methods=["GET"])
+@app.route('/api/v1', methods=["GET"])
+@app.route('/api/v1/<date>', methods=["GET"])
 def index(date=None):
     query_date = request.args.get("date")
 
@@ -29,6 +29,6 @@ def index(date=None):
 
 
 if __name__ == "__main__":
-    api.run(debug=True)
+    app.run(debug=True)
 
 
