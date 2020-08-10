@@ -28,5 +28,5 @@ def fetch_data(url, date=None):
     
     for items in actual_data:
         if items[3] in countries:
-            data.append({"id": data.length,"Country" : items[3], "Confirmed" : items[7], "Deaths": items[8], "Recovered": items[9], "Active": items[10]})
+            data.append({"id": len(data),"Country" : items[3], "Confirmed" : items[7], "Deaths": items[8], "Recovered": items[9], "Active": items[10]})
     return data
